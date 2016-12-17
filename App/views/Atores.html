@@ -1,0 +1,65 @@
+﻿<section>
+    <link href="../../../IMDbApp/Content/Modal.css" rel="stylesheet" />
+    <div class="page-header container">
+        <h2>Atores<small data-bind="visible: (actorsCount() > 0)"> - Lista de Atores (<span data-bind="text: actorsCount"></span>)</small></h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Actor Name:</span>
+                    <input type="text" id="actorTitle" class="form-control" data-bind="value : searchText" aria-describedby="basic-addon1" placeholder="Actor title" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-default" id="searchBtn" data-bind="click: searchActors, disable : searchTextGood"><i class="fa fa-search"></i></button>
+                <button class="btn btn-default" id="clearSearchBtn" data-bind="click : clearActors"><i class="fa fa-trash-o"></i></button>
+            </div>
+        </div>
+        <hr />
+        <div class="row" data-bind="foreach: actors">
+            <div class="col-md-4">
+                <div><i class="fa fa-film"></i> <a href="" data-toggle="modal" data-target="#myModal" data-bind="text: actorName, click: selectActor"></a></div>
+            </div>
+
+        </div> <span class="alert alert-danger col-md-12" data-bind="visible: error, html: error"></span>
+    </div>
+    <div id="myModal" class="modal modal-wide fade " tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" data-bind="foreach:actorID">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Informações sobre o <span data-bind="text:actorName"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Nome: <span data-bind="text:actorName"></span><img style="width:200px;height:250px;float:right;" data-bind="attr:{src:photo}" /></p>
+                    <p>Facebook Likes: <span data-bind="text:actorFacebookLikes"></span></p>
+                    <p>Filmes nos quais participou:</p>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Nome:</td>
+                                    <td>Ano:</td>
+                                    <td>IMDb Score:</td>
+                                    <td>IMDb Link:</td>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach:actor_movies">
+                                <tr>
+                                    <td data-bind="text:movie_title"></td>
+                                    <td data-bind="text:title_year"></td>
+                                    <td data-bind="text:imdb_score"></td>
+                                    <td><a data-bind="attr:{href:movie_imdb_link},text:movie_imdb_link"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

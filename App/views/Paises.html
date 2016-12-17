@@ -1,0 +1,62 @@
+﻿<section>
+    <link href="../../../IMDbApp/Content/Modal.css" rel="stylesheet" />
+    <div class="page-header">
+        <h2>CountriesService - <small data-bind="visible: (countriesCount() > 0)"><i class="fa fa-film"></i> Countries List [<span data-bind="text: countriesCount"></span>]</small></h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Countries:</span>
+                    <input type="text" id="countryTitle" class="form-control" data-bind="value: searchText" aria-describedby="basic-addon1" placeholder="Country title" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-default" id="searchBtn" data-bind="click: searchCountries, disable: searchTextGood"><i class="fa fa-search"></i></button>
+                <button class="btn btn-default" id="clearSearchBtn" data-bind="click : clearCountries"><i class="fa fa-trash-o"></i></button>
+            </div>
+        </div>
+        <hr />
+        <div class="row" data-bind="foreach: countries">
+            <div class="col-md-4">
+                <div><i class="fa fa-film"></i> <a href="#" data-target="#myModal" data-toggle="modal" data-bind="text: countryName, click: countryDetails"></a></div>
+            </div>
+        </div> <span class="alert alert-danger col-md-12" data-bind="visible: error, html: error"></span>
+    </div>
+    <div id="myModal" class="modal modal-wide fade " tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" data-bind="foreach:countryID">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">País: <span data-bind="text: countryName"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Filmes:</p>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Nome:</td>
+                                    <td>Ano:</td>
+                                    <td>IMDb Score:</td>
+                                    <td>IMDb Link:</td>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach:movies">
+                                <tr>
+                                    <td data-bind="text:movie_title"></td>
+                                    <td data-bind="text:title_year"></td>
+                                    <td data-bind="text:imdb_score"></td>
+                                    <td><a data-bind="attr:{href:movie_imdb_link},text:movie_imdb_link"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,86 @@
+﻿<section>
+    <link href="../../../IMDbApp/Content/Modal.css" rel="stylesheet" />
+    <div class="page-header">
+        <h2>MoviesService - <small data-bind="visible: (moviesCount() > 0)"><i class="fa fa-film"></i> Movies List [<span data-bind="text: moviesCount"></span> ]</small></h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Movies Name:</span>
+                    <input type="text" id="moviesTitle" class="form-control" data-bind="value : searchText" aria-describedby="basic-addon1" placeholder="Movie title" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-default" id="searchBtn" data-bind="click: searchMovies, disable : searchTextGood"><i class="fa fa-search"></i></button>
+                <button class="btn btn-default" id="clearSearchBtn" data-bind="click : clearMovies"><i class="fa fa-trash-o"></i></button>
+            </div>
+        </div>
+        <hr />
+        <div class="row" data-bind="foreach: movies">
+            <div class="col-md-4">
+                <div><i class="fa fa-film"></i> <a href="" data-toggle="modal" data-target="#myModal" data-bind="text: movie_title, click: movieDetails"></a></div>
+            </div>
+        </div> <span class="alert alert-danger col-md-12" data-bind="visible: error, html: error"></span>
+    </div>
+    <div id="myModal" class="modal modal-wide fade " tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" data-bind="foreach: movieID">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Informações sobre o "<span data-bind="text: movie_title"></span>"</h4>
+                </div>
+                <div class="modal-body">
+                    <img style="width:100px;height:150px;float:right;" data-bind="attr:{src:poster}" />
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">Nome: <span data-bind="text: movie_title"></span></td>
+                                    <td>Cor/PB: <span data-bind="text:color"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Ano: <span data-bind="text: title_year"></span></td>
+                                    <td>País: <span data-bind="text: countryName"></span></td>
+                                    <td>Língua: <span data-bind="text: languageName"></span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Atores: <span data-bind="foreach: movie_actors"><span data-bind="text: actorName"></span>, </span></td>
+                                    <td>Diretor: <span data-bind="text:directorName"></span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Géneros: <span data-bind="foreach: genres"><span data-bind="text:genreName"></span>, </span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Palavras-chave: <span data-bind="text: plot_keywords"></span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">IMDb Link: <a data-bind="attr:{href:movie_imdb_link},text: movie_imdb_link"></a></td>
+                                    <td>Pontuação IMDb: <span data-bind="text: imdb_score"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Proporção do ecrã: <span data-bind="text: aspect_ratio"></span></td>
+                                    <td>Duração (min): <span data-bind="text: duration"></span></td>
+                                    <td>Classificação do conteúdo: <span data-bind="text: content_rating"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Orçamento ($): <span data-bind="text: budget"></span></td>
+                                    <td>Retorno ($): <span data-bind="text: gross"></span></td>
+                                    <td>Criticas de avaliadores: <span data-bind="text: num_critic_for_reviews"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Votos dos utilizadores: <span data-bind="text: num_voted_users"></span></td>
+                                    <td>Gostos no facebook do elenco: <span data-bind="text: cast_total_facebook_likes"></span></td>
+                                    <td>Gostos no facebook do filme: <span data-bind="text: movie_facebook_likes"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
