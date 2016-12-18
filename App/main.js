@@ -13,7 +13,7 @@ define('knockout', ko);
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],  function (system, app, viewLocator) {
     system.debug(true);
 
-    app.title = 'ITW Starter Kit';
+    app.title = 'IMDb App';
 
     app.configurePlugins({
         router: true,
@@ -22,7 +22,6 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],  function (s
 
     app.start().then(function() {
         viewLocator.useConvention();
-
         app.setRoot('viewmodels/shell', 'entrance');
     });
 });
