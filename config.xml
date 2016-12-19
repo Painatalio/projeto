@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="pt.talents-e-treasures.aguedacomvida" version="1.0.0.201511151632" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget version="1.0.0.201511151632" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
   <name>IMDb App</name>
   <description>IMDb App - A verdadeira aplicação de avaliação de entertenimento</description>
   <author email="danielnunes98@ua.pt; pedro.joseferreira@ua.pt" href="www.ua.pt/deti">Departamento de Engª Elestrónica e Telecomunicações, Universidade de Aveiro</author>
