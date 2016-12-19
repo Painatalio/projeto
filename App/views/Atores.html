@@ -1,48 +1,58 @@
 ﻿<section>
     <link href="../../../IMDbApp/Content/Modal.css" rel="stylesheet" />
-    <div class="page-header container">
-        <h2>Atores<small data-bind="visible: (actorsCount() > 0)"> - Lista de Atores (<span data-bind="text: actorsCount"></span>)</small></h2>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-2">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Actor Name:</span>
-                    <input type="text" id="actorTitle" class="form-control" data-bind="value : searchText" aria-describedby="basic-addon1" placeholder="Actor title" />
+    <div style="background-image:url(http://www.planwallpaper.com/static/images/6790904-free-background-wallpaper.jpg)">
+        <div class="container" style="background-color:white; padding-bottom:60px">
+            <div class="page-header" style="background-color:white;">
+                <h2>Atores<small data-bind="visible: (actorsCount() > 0)"> - Lista de Atores (<span data-bind="text: actorsCount"></span>)</small></h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-2">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Ator:</b></span>
+                        <input type="text" id="actorTitle" class="form-control" data-bind="value : searchText" aria-describedby="basic-addon1" placeholder="Nomed do ator" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-default" id="searchBtn" data-bind="click: searchActors, disable : searchTextGood"><i class="fa fa-search"></i></button>
+                    <button class="btn btn-default" id="clearSearchBtn" data-bind="click : clearActors"><i class="fa fa-trash-o"></i></button>
                 </div>
             </div>
-            <div class="col-md-2">
-                <button class="btn btn-default" id="searchBtn" data-bind="click: searchActors, disable : searchTextGood"><i class="fa fa-search"></i></button>
-                <button class="btn btn-default" id="clearSearchBtn" data-bind="click : clearActors"><i class="fa fa-trash-o"></i></button>
-            </div>
-        </div>
-        <hr />
-        <div class="row" data-bind="foreach: actors">
-            <div class="col-md-4">
-                <div><i class="fa fa-film"></i> <a href="" data-toggle="modal" data-target="#myModal" data-bind="text: actorName, click: selectActor"></a></div>
-            </div>
+            <hr />
+            <div class="row" data-bind="foreach: actors">
+                <div class="col-md-4">
+                    <div><i class="fa fa-user"></i> <a style="color:black; font-size:medium" href="" data-toggle="modal" data-target="#myModal" data-bind="text: actorName, click: selectActor"></a></div>
+                </div>
 
-        </div> <span class="alert alert-danger col-md-12" data-bind="visible: error, html: error"></span>
+            </div> <span class="alert alert-danger col-md-12" data-bind="visible: error, html: error"></span>
+        </div>
+        <footer class="container-fluid" style="width:100%;background-color:#282727; font-family:Rockwell; font-size:medium; color:white;">
+            <div class="col-lg-1"></div>
+            <div style="font-size:30px" class="col-xs-6 col-lg-3">Siga-nos! <i class="fa fa-facebook-square" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"> </i> <i class="fa fa-youtube-play" aria-hidden="true"></i> </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-1"></div>
+            <div style="text-align:right" class="col-xs-6 col-lg-6"> Gosta do que vê? Deixe-nos a sua opinião <a href="#Ajuda" style="color:white"><u>aqui</u></a> e preencha o formulário<br />ITW APP &copy; Made by Daniel and Pedro</div>
+            <div class="col-lg-1"></div>
+        </footer>
     </div>
     <div id="myModal" class="modal modal-wide fade " tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content" data-bind="foreach:actorID">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Informações sobre o <span data-bind="text:actorName"></span></h4>
+                    <h4 class="modal-title"><b>Informações sobre o</b> <span data-bind="text:actorName"></span></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Nome: <span data-bind="text:actorName"></span><img style="width:200px;height:250px;float:right;" data-bind="attr:{src:photo}" /></p>
-                    <p>Facebook Likes: <span data-bind="text:actorFacebookLikes"></span></p>
-                    <p>Filmes nos quais participou:</p>
+                    <p><b>Nome:</b> <span data-bind="text:actorName"></span><img style="width:100%;max-width:300px;max-height:400px;float:right;" data-bind="attr: {src : (photo == '/images/nophoto.png' ? 'https://az853139.vo.msecnd.net/static/images/not-found.png' : photo)}" /></p>
+                    <p><b>Facebook Likes:</b> <span data-bind="text:actorFacebookLikes"></span></p>
+                    <p><b>Filmes nos quais participou:</b></p>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td>Nome:</td>
-                                    <td>Ano:</td>
-                                    <td>IMDb Score:</td>
-                                    <td>IMDb Link:</td>
+                                    <td><b>Nome:</b></td>
+                                    <td><b>Ano:</b></td>
+                                    <td><b>IMDb Score:</b></td>
+                                    <td><b>IMDb Link:</b></td>
                                 </tr>
                             </thead>
                             <tbody data-bind="foreach:actor_movies">
