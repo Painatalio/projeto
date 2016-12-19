@@ -1,24 +1,24 @@
 ﻿define(['plugins/http', 'durandal/app', 'knockout'], function () {
     return {
         closeModal: function () {
-            var s = document.getElementsByTagName("IFRAME")[0];
+            var s = document.getElementsByTagName("IFRAME")[1];
             s.src = '';
         },
         trailer: function () {
-            var s = document.getElementsByTagName("IFRAME")[0];
-            s.src = "http://www.imdb.com/videoembed/vi1590670873"
+            var s = document.getElementsByTagName("IFRAME")[1];
+            s.src = "http://www.imdb.com/videoembed/vi282768921"
         },
         trailer2: function () {
-            var s = document.getElementsByTagName("IFRAME")[0];
-            s.src = "//www.dailymotion.com/embed/video/x55flyx";
+            var s = document.getElementsByTagName("IFRAME")[1];
+            s.src = "http://www.imdb.com/videoembed/vi2827400729";
         },
         trailer3: function () {
-            var s = document.getElementsByTagName("IFRAME")[0];
-            s.src = "//www.dailymotion.com/embed/video/x4m9s8d"
+            var s = document.getElementsByTagName("IFRAME")[1];
+            s.src = "http://www.imdb.com/videoembed/vi2433726233"
         },
         trailer4: function () {
-            var s = document.getElementsByTagName("IFRAME")[0];
-            s.src = "//www.dailymotion.com/embed/video/x441b0i";
-        }
+            var s = document.getElementsByTagName("IFRAME")[1];
+            s.src = "http://www.imdb.com/videoembed/vi956348185";
+        },
     };
 });
