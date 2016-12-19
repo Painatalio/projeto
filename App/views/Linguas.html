@@ -54,7 +54,7 @@
                             </thead>
                             <tbody data-bind="foreach:movies">
                                 <tr>
-                                    <td><a data-bind="attr:{href:'http://localhost:50012/IMDb/Filmes.html'},text:movie_title"></a></td>
+                                    <td data-bind="text:movie_title"></td>
                                     <td data-bind="text:title_year"></td>
                                     <td data-bind="text:imdb_score"></td>
                                     <td><a data-bind="attr:{href:movie_imdb_link},text:movie_imdb_link"></a></td>
