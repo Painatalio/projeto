@@ -4,7 +4,7 @@
   <description>IMDb App - A verdadeira aplicação de avaliação de entertenimento</description>
   <author email="danielnunes98@ua.pt; pedro.joseferreira@ua.pt" href="www.ua.pt/deti">Departamento de Engª Elestrónica e Telecomunicações, Universidade de Aveiro</author>
   <preference name="permissions" value="none" />
-  <preference name="orientation" value="portrait" />
+  <preference name="orientation" value="default" />
   <preference name="target-device" value="universal" />
   <preference name="fullscreen" value="true" />
   <preference name="webviewbounce" value="true" />
