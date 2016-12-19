@@ -1,6 +1,10 @@
 ﻿define(['plugins/router', 'durandal/app'], function (router, app) {
     return {
         router: router,
+        navbar:
+            $(document).on('click', function () {
+            $('.collapse').collapse('hide');
+        }),
         activate: function () {
             router.map([
                 { route: '', title: 'Welcome', moduleId: 'viewmodels/welcome', nav: false, menu: '' },

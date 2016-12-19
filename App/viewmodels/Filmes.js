@@ -9,6 +9,7 @@
         self.movieID = ko.observable();
         self.moviesCount = ko.observable(null);
         self.error = ko.observable();
+        self.css_show = ko.observable('');
         self.searchTextGood = ko.computed(function () {
             return (self.searchText().length < 3)
         }, self);

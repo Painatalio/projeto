@@ -1,5 +1,5 @@
 ﻿<section>
-    <link href="Content/Ajuda.css" rel="stylesheet" />
+    <link href="../../../IMDbApp/Content/Ajuda.css" rel="stylesheet" />
     <div class="container" style="font-family:Rockwell;">
         <h1 style="padding-bottom:20px">
             <i class="fa fa-question-circle" aria-hidden="true"></i>
@@ -84,58 +84,59 @@
                 Outra dúvida? Caso não tenha encontrado resposta às suas dúvidas, poderá utilizar o formulário para solicitar um pedido de informação (ou reclamar, elogiar ou fazer sugestões)! <br /><div style="color:black; padding-top:10px"><button data-toggle="modal" data-target="#myModal">Formulário</button></div>
             </div>
         </div>
-        </div>
-     <br />
-     <br />
-        <footer class="container-fluid" style="width:100%;background-color:#282727; font-family:Rockwell; font-size:medium; color:white;">
-            <div class="col-lg-1"></div>
-            <div style="font-size:30px" class="col-xs-6 col-lg-3">Siga-nos! <i class="fa fa-facebook-square" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"> </i> <i class="fa fa-youtube-play" aria-hidden="true"></i> </div>
-            <div class="col-lg-1"></div>
-            <div class="col-lg-1"></div>
-            <div style="text-align:right" class="col-xs-6 col-lg-6"> Gosta do que vê? Deixe-nos a sua opinião <a href="#Ajuda" style="color:white"><u>aqui</u></a> e preencha o formulário<br />ITW APP &copy; Made by Daniel and Pedro</div>
-            <div class="col-lg-1"></div>
-        </footer>
-        <div style="font-size:medium" class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" id="modallogin">
-                        <button id="modallogin" type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 id="modallogin" style="color:red;"> Formulário</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="http://192.168.160.36/FormEcho.aspx" role="form">
-                            <div class="form-group">
-                                <label for="nome"> Nome:</label>
-                                <input type="text" name="nome" class="form-control" id="nome">
-                            </div>
-                            <div class="form-group">
-                                <label for="email"> Email:</label>
-                                <input type="text" name="email" class="form-control" id="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="idade"> Idade:</label>
-                                <input type="number" placeholder="Digite a sua idade através do uso das setas" name="idade" min="1" max="120" class="form-control" id="idade">
-                            </div>
-                            <div class="form-group">
-                                <label for="usrname"> Assunto:</label>
-                                <select name="assunto" class="form-control">
-                                    <option class="form-control" name="pedidodeinformacao">Pedido de Informação</option>
-                                    <option class="form-control" name="reclamacao">Reclamação</option>
-                                    <option class="form-control" name="elogiar">Elogiar</option>
-                                    <option class="form-control" name="sugestao">Sugestão</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="mensagem"> Mensagem:</label>
-                                <textarea class="form-control" name="mensagem" rows="5" placeholder="Insira o seu comentário"></textarea>
-                            </div>
-                            <div style="padding-bottom:50px">
-                                <div class="col-md-6" style="float:left; width:50%"><button type="submit" class="btn btn-default btn-success btn-block"> Submeter</button></div>
-                                <div class="col-md-6" style="float:left; width:50%; "><button type="reset" class="btn btn-default btn-success btn-block"> Apagar</button></div>
-                            </div>
-                        </form>
-                    </div>
+    </div>
+    <br />
+    <br />
+    <footer class="container-fluid" style="width:100%;background-color:#282727; font-family:Rockwell; font-size:medium; color:white;">
+        <div class="col-lg-1"></div>
+        <div style="font-size:20px" class="col-xs-6 col-lg-3">Siga-nos! <i class="fa fa-facebook-square" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"> </i> <i class="fa fa-youtube-play" aria-hidden="true"></i> </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-1"></div>
+        <div style="text-align:right" class="col-xs-6 col-lg-6"> Gosta do que vê? Deixe-nos a sua opinião <a href="#Ajuda" style="color:white"><u>aqui</u></a> e preencha o formulário<br />ITW APP &copy; Made by Daniel and Pedro</div>
+        <div class="col-lg-1"></div>
+    </footer>
+    <div style="font-size:medium" class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" id="modallogin">
+                    <button id="modallogin" type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="modallogin" style="color:red;"> Formulário</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="http://192.168.160.36/FormEcho.aspx" role="form">
+                        <div class="form-group">
+                            <label for="nome"> Nome:</label>
+                            <input type="text" name="nome" class="form-control" id="nome" required>
+                            <div id="nome_Error" class="no_error form-control-static text-danger bg-danger">&nbsp;<i class="fa fa-exclamation-triangle"></i>O nome deve ter pelo menos 3 letras!&nbsp;</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"> Email:</label>
+                            <input type="text" name="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="idade"> Idade:</label>
+                            <input type="number" placeholder="Digite a sua idade através do uso das setas" name="idade" min="1" max="120" class="form-control" id="idade">
+                        </div>
+                        <div class="form-group">
+                            <label for="usrname"> Assunto:</label>
+                            <select name="assunto" class="form-control">
+                                <option class="form-control" name="pedidodeinformacao">Pedido de Informação</option>
+                                <option class="form-control" name="reclamacao">Reclamação</option>
+                                <option class="form-control" name="elogiar">Elogiar</option>
+                                <option class="form-control" name="sugestao">Sugestão</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem"> Mensagem:</label>
+                            <textarea class="form-control" name="mensagem" rows="5" placeholder="Insira o seu comentário" required></textarea>
+                        </div>
+                        <div style="padding-bottom:50px">
+                            <div class="col-md-6" style="float:left; width:50%"><button type="submit" class="btn btn-default btn-success btn-block"> Submeter</button></div>
+                            <div class="col-md-6" style="float:left; width:50%; "><button type="reset" class="btn btn-default btn-success btn-block"> Apagar</button></div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 </section>

@@ -1,9 +1,9 @@
 ﻿<section>
-    <link href="Content/Modal.css" rel="stylesheet" />
+    <link href="../../../IMDbApp/Content/Modal.css" rel="stylesheet" />
     <div style="background-image:url(http://www.planwallpaper.com/static/images/6790904-free-background-wallpaper.jpg)">
         <div class="container" style="background-color:white; padding-bottom:60px">
             <div class="page-header" style="background-color:white;">
-                <h2>Filmes - <small data-bind="visible: (moviesCount() > 0)"> Lista de Filmes (<span data-bind="text: moviesCount"></span>)</small></h2>
+                <h2>Filmes<small data-bind="visible: (moviesCount() > 0)"> (<span data-bind="text: moviesCount"></span>)</small></h2>
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-2">
@@ -26,7 +26,7 @@
         </div>
         <footer class="container-fluid" style="width:100%;background-color:#282727; font-family:Rockwell; font-size:medium; color:white;">
             <div class="col-lg-1"></div>
-            <div style="font-size:30px" class="col-xs-6 col-lg-3">Siga-nos! <i class="fa fa-facebook-square" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"> </i> <i class="fa fa-youtube-play" aria-hidden="true"></i> </div>
+            <div style="font-size:20px" class="col-xs-6 col-lg-3">Siga-nos! <i class="fa fa-facebook-square" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"> </i> <i class="fa fa-youtube-play" aria-hidden="true"></i> </div>
             <div class="col-lg-1"></div>
             <div class="col-lg-1"></div>
             <div style="text-align:right" class="col-xs-6 col-lg-6"> Gosta do que vê? Deixe-nos a sua opinião <a href="#Ajuda" style="color:white"><u>aqui</u></a> e preencha o formulário<br />ITW APP &copy; Made by Daniel and Pedro</div>
@@ -38,7 +38,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><b>Informações sobre o</b> "<span data-bind="text: movie_title"></span>"</h4>
+                    <h4 class="modal-title"><b>Detalhes sobre o</b> "<span data-bind="text: movie_title"></span>"</h4>
                 </div>
                 <div class="modal-body">
                     <img style="width:100%;max-width:300px;max-height:400px;float:right;" data-bind="attr: {src : (poster == '/images/noposter.png' ? 'https://az853139.vo.msecnd.net/static/images/not-found.png' : poster)}" />
@@ -46,7 +46,7 @@
                         <table class="table table-striped">
                             <tbody>
                                 <tr>
-                                    <td colspan="2"><b>Nome:</b> <span data-bind="text: movie_title"></span></td>
+                                    <td colspan="2"><b>Nome:</b> <span id="movie_title" data-bind="text: movie_title"></span></td>
                                     <td><b>Cor/PB:</b> <span data-bind="text:color"></span></td>
                                 </tr>
                                 <tr>
@@ -55,17 +55,17 @@
                                     <td><b>Língua:</b> <span data-bind="text: languageName"></span></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><b>Atores:</b> <span data-bind="foreach: movie_actors"><a data-bind="attr:{href:'http://localhost:50012/IMDb/Atores.html'},text: actorName"></a>, </span></td>
+                                    <td colspan="2"><b>Atores:</b> <span data-bind="foreach: movie_actors"><span data-bind="text: actorName"></span>, </span></td>
                                     <td><b>Diretor:</b> <span data-bind="text:directorName"></span></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3"><b>Géneros:</b> <span data-bind="foreach: genres"><a data-bind="attr:{href:'http://localhost:50012/IMDb/Generos.html'},text:genreName"></a>, </span></td>
+                                    <td colspan="3"><b>Géneros:</b> <span data-bind="foreach: genres"><span data-bind="text:genreName"></span>, </span></td>
                                 </tr>
                                 <tr>
                                     <td colspan="3"><b>Palavras-chave:</b> <span data-bind="text: plot_keywords"></span></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><b>IMDb Link:</b> <span data-bind="text: movie_imdb_link"></span></td>
+                                    <td colspan="2"><b>IMDb Link:</b> <a data-bind="attr:{href:movie_imdb_link},text: movie_imdb_link"></a></td>
                                     <td><b>Pontuação IMDb:</b> <span data-bind="text: imdb_score"></span></td>
                                 </tr>
                                 <tr>
