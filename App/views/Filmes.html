@@ -51,12 +51,12 @@
                                 </tr>
                                 <tr>
                                     <td><b>Ano:</b> <span data-bind="text: title_year"></span></td>
-                                    <td><b>País:</b> <a data-bind="attr:{href:'http://localhost:50012/IMDb/Paises.html'},text: countryName"></a></td>
-                                    <td><b>Língua:</b> <a data-bind="attr:{href:'http://localhost:50012/IMDb/Linguas.html'},text: languageName"></a></td>
+                                    <td><b>País:</b> <span data-bind="text: countryName"></span></td>
+                                    <td><b>Língua:</b> <span data-bind="text: languageName"></span></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><b>Atores:</b> <span data-bind="foreach: movie_actors"><a data-bind="attr:{href:'http://localhost:50012/IMDb/Atores.html'},text: actorName"></a>, </span></td>
-                                    <td><b>Diretor:</b> <a data-bind="attr:{href:'http://localhost:50012/IMDb/Diretores.html'},text:directorName"></a></td>
+                                    <td><b>Diretor:</b> <span data-bind="text:directorName"></span></td>
                                 </tr>
                                 <tr>
                                     <td colspan="3"><b>Géneros:</b> <span data-bind="foreach: genres"><a data-bind="attr:{href:'http://localhost:50012/IMDb/Generos.html'},text:genreName"></a>, </span></td>
@@ -65,7 +65,7 @@
                                     <td colspan="3"><b>Palavras-chave:</b> <span data-bind="text: plot_keywords"></span></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><b>IMDb Link:</b> <a data-bind="attr:{href:movie_imdb_link},text: movie_imdb_link"></a></td>
+                                    <td colspan="2"><b>IMDb Link:</b> <span data-bind="text: movie_imdb_link"></span></td>
                                     <td><b>Pontuação IMDb:</b> <span data-bind="text: imdb_score"></span></td>
                                 </tr>
                                 <tr>
